@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+// import Mainheading from "./components/mainheading";
+import Cards from "./components/cards";
+import {arr} from "./constants";
+import Ilearned from "./components/ilearned";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// to render all the content of arr of obj
+
+function fun (arr) {
+  return(
+    <Cards 
+    key = {arr.id}
+    id = {arr.id}
+    name = {arr.name}
+    img = {arr.img}
+    />
+  )
 }
+
+const App = () =>  (
+    <div> 
+      {/* <h2>OK this will work</h2> */}
+
+      {/* <Mainheading /> */}
+
+      {/* <Cards 
+      id = {arr[0].id}
+      name = {arr[0].name}
+      /> */}
+
+      <h1 className='my-4 text-xl font-semibold text-center font-mono'>The following are the cards from array in constants.js</h1>
+
+      {
+        arr.map(fun)
+      }
+    <Ilearned />
+    </div>
+)
 
 export default App;
